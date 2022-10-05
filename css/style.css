@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-family: cursive;
+    color: rgb(31, 140, 103);
+}
+
+.nuvens {
+    position: absolute;
+    width: 550px;
+    animation: nuvens-animacao 20s infinite linear;
+}
+
+/*Animação Nuvens */
+@keyframes nuvens-animacao {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+
+.game {
+    background: linear-gradient(#87CEEB, #E0F6FF);
+    width: 100%;
+    height: 100vh;
+    border-bottom: 15px solid rgb(19, 142, 19);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    animation: pipe-movimento 1.5s infinite linear;
+}
+
+/* Movimento do Pipe*/
+@keyframes pipe-movimento {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+.pulo {
+    animation: pulo 500ms ease-out;
+}
+
+/*Animação Mario */
+@keyframes pulo {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+.montanhas {
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    width: 20%;
+    height: 80px;
+    animation: montanhas-movimento 10s infinite linear;
+}
+
+/* Movimento do montanhas*/
+@keyframes montanhas-movimento {
+    from {
+        right: 0px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+div#mudo-button {
+    margin: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-size: 40px;
+    background-position: center;
+    background-image: url('../img/mudo.png');
+}
+
+div#mudo-button:focus {
+    outline: none;
+}
+
+div#mudo-button.muted {
+    background-image: url('../img/speaker.png');
+}
+
+.controles {
+    width: 350px;
+    margin: 30px 15px 5px 15px;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+.controles h2 {
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+}
+
+.controles h3 {
+    color: #000000;
+    font-size: 22px;
+    margin: 10px 5px;
+    text-align: center;
+}
