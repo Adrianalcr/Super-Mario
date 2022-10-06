@@ -38,14 +38,30 @@ const loop = setInterval(() =>{
         }stopMusicaStop();     
         
         clearInterval(loop);        
-    }
-
-    document.addEventListener("touchstart", e =>{
-        mario.classList.add('pulo');
-    } );
+    }    
 
 },10)
 
-
-
 document.addEventListener('keydown', pulo) 
+
+document.addEventListener("touchstart", e =>{
+    [...e.changedTouches].forEach(touch =>{
+        mario.classList.add("pulo");
+        mario.id = touch.identifier
+        document.body.append(mario);
+    })
+} )
+
+document.addEventListener("touchmove", e =>{
+    [...e.changedTouches].forEach(touch =>{
+        const mario = document.getElementById(touch.identifier);
+        mario.classList.add("pulo");
+    } );
+} )
+
+document.addEventListener("touchend", e =>{
+    [...e.changedTouches].forEach(touch =>{
+        const mario = document.getElementById(touch.identifier);
+        mario.stop("pulo");
+    }, 500);
+} )
